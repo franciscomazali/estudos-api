@@ -39,7 +39,8 @@ app.post("/pessoa", (req, res) => {
 
 app.get("/pessoa/:id", (req, res) => {
   let sql = "SELECT id, nome, tipo, email, telefone, documento FROM pessoa";
-  if (req.params.id) {
+
+  if (req.params && req.params.id) {
     sql += " where id=" + req.params.id;
   }
 
