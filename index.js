@@ -47,6 +47,12 @@ app.get("/pessoa/:id", (req, res) => {
   return banco.execSQLQuery(sql, res);
 });
 
+app.get("/pessoa", (req, res) => {
+    let sql = "SELECT id, nome, tipo, email, telefone, documento FROM pessoa";
+  
+    return banco.execSQLQuery(sql, res);
+  });
+
 app.put("/pessoa/:id", (req, res) => {
   var body = req.body;
 
